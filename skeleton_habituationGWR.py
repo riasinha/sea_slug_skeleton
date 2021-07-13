@@ -19,10 +19,10 @@ import matplotlib.pyplot as plt
 stv = 4 
 
 # TODO: set up an input pulse called pls
-pls = input("What pulse do you want?")
+pls = [0, 0, 1, 0, 0]
 
 # TODO: then create a list of 6 pulses, called x, to use for input
-x = np.array(6)
+x = pls*6
 
 v = stv # Set connection weight to start weight value
 
@@ -41,8 +41,8 @@ y = np.zeros((1,nTs)) # set up (define) a vector for the output time series
 #     then indent 4 spaces and write the equation that
 #     describes how each input value in the vector x is 
 #     transformed to the output value in the vector y
-for i in range(len(x)):
-    x[i] += stv
+for i in range(0, nTs):
+    y[i] = v*x[i]
 
 
 ###############################
